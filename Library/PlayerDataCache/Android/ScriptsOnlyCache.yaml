@@ -31,6 +31,7 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.EventTrigger
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
@@ -136,6 +137,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3076}
     - Class: 114
       Script: {instanceID: 3626}
+    - Class: 114
+      Script: {instanceID: 3722}
     - Class: 114
       Script: {instanceID: 3762}
     - Class: 114
@@ -723,6 +726,6 @@ ScriptsOnlyBuild:
     className: FabrikSolver2D
   platform: 13
   scenePathNames:
-  - Assets/Scenes/PlayScene.unity
   - Assets/Scenes/MainScene.unity
+  - Assets/Scenes/PlayScene.unity
   playerPath: E:/Downloads/BunnyJump.apk

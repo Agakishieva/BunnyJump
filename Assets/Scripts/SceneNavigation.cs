@@ -27,6 +27,7 @@ public class SceneNavigation
     {
         AddSceneToStack();
         SceneManager.LoadScene(playSceneName);
+        Time.timeScale = 1f;
     }
 
     public static void NavigateMain()

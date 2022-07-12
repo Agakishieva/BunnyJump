@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     private float moveX;
 
+
     
     void Awake()
     {
@@ -24,19 +25,22 @@ public class PlayerController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if(Application.platform == RuntimePlatform.Android)
-        {
-            moveX = Input.acceleration.x;
-            rb.velocity = new Vector2(Input.acceleration.x * moveSpeed, rb.velocity.y);
-        }
-        else
-        {
-            Vector2 velocity = rb.velocity;
-            velocity.x = moveX;
-            rb.velocity = velocity;
-        }
+        Vector2 velocity = rb.velocity;
+        velocity.x = moveX;
+        rb.velocity = velocity;
     }
-
+    public void OnLeftButtonDown()
+    {
+        rb.transform.position = new Vector2(rb.transform.position.x - 1f, rb.transform.position.y);
+    }
+    public void OnRightButtonDown()
+    {
+        rb.transform.position = new Vector2(rb.transform.position.x + 1f, rb.transform.position.y);
+    }
+    public void OnButtonUp()
+    {
+        rb.transform.position = new Vector2(rb.transform.position.x, rb.transform.position.y);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "MainCamera")
@@ -61,7 +65,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.collider.name == "DeadZone")
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 }
